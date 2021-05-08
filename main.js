@@ -4,6 +4,7 @@ const generateBtn = document.getElementById("generateBtn");
 const copyBtn = document.getElementById("copy");
 
 const passRange = document.getElementById("passRange");
+const rangeInfo = document.getElementById("range-info");
 
 const lowerCaseCheck = document.getElementById("lowercase");
 const upperCaseCheck = document.getElementById("uppercase");
@@ -76,8 +77,9 @@ function copyToClip(string) {
 }
 
 function appendPassword() {
+  rangeInfo.innerText = passRange.value;
   const generators = constructGenerators();
-  password.innerText = genertePassword(passRange.value, generators);
+  password.innerText = genertePassword(passRange.value - 1, generators);
 }
 
 function main() {
