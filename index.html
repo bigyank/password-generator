@@ -4,34 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
     <title>Password Generator</title>
   </head>
   <body>
-    <div>
-      <input id="passRange" type="range" min="5" max="256" value="7" />
-    </div>
-    <div>
-      <input type="checkbox" id="lowercase" name="lowercase" />
-      <label for="lowercase"> Lowercase</label><br />
-    </div>
+    <main>
+      <header>
+        <h1>Random Password Generator</h1>
+      </header>
 
-    <div>
-      <input type="checkbox" id="uppercase" name="uppercase" />
-      <label for="uppercase"> Uppercase</label><br />
-    </div>
+      <div class="generator-container">
+        <div class="range-container">
+          <span>Length</span>
+          <input
+            id="passRange"
+            class="passRange"
+            type="range"
+            min="5"
+            max="32"
+            value="7"
+          />
+        </div>
 
-    <div>
-      <input type="checkbox" id="digit" name="digit" />
-      <label for="digit"> Digit</label><br />
-    </div>
+        <div class="options-container">
+          <div class="options">
+            <label for="lowercase"> Lowercase</label><br />
+            <input type="checkbox" id="lowercase" name="lowercase" checked />
+          </div>
 
-    <div>
-      <input type="checkbox" id="symbol" name="symbol" />
-      <label for="symbol"> Symbol</label><br />
-    </div>
+          <div class="options">
+            <label for="uppercase"> Uppercase</label><br />
+            <input type="checkbox" id="uppercase" name="uppercase" />
+          </div>
 
-    <button type="submit" id="generateBtn">Generate</button>
-    <div id="root"></div>
+          <div class="options">
+            <label for="digit"> Digit</label><br />
+            <input type="checkbox" id="digit" name="digit" />
+          </div>
+
+          <div class="options">
+            <label for="symbol"> Symbol</label><br />
+            <input type="checkbox" id="symbol" name="symbol" />
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button type="submit" id="generateBtn" class="btn btn-primary">
+            Generate Password
+          </button>
+        </div>
+
+        <div class="password-container" id="password-container">
+          <div id="password"></div>
+        </div>
+      </div>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>

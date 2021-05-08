@@ -1,0 +1,22 @@
+@import url(reset.css);
+@import url(generator.css);
+@import url(utility.css);
+
+:root {
+  --clr-neutral: #212121;
+  --clr-accent-900: #66aaff;
+  --clr-accent-500: #89b9f5;
+  --clr-primary: #181717;
+  --font-primaary: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--font-primaary);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-primary);
+  color: white;
+  min-height: 100vh;
+}

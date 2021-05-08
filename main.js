@@ -1,4 +1,5 @@
-const root = document.getElementById("root");
+const password = document.getElementById("password");
+const passwordContainer = document.getElementById("password-container");
 const generateBtn = document.getElementById("generateBtn");
 
 const passRange = document.getElementById("passRange");
@@ -52,31 +53,31 @@ function constructGenerators() {
 }
 
 function genertePassword(len = 12, generators) {
-  let count = 0;
   let passPhrase = "";
 
   // generate random chars untill length is fulfilled
-  while (count < len) {
+  while (passPhrase.length <= len) {
     //   randomly call generators to be used
-    //  add append output
     passPhrase += generators[Math.floor(Math.random() * generators.length)]();
-    count++;
   }
 
-  console.log(passPhrase.slice(0, len).length);
-  return passPhrase.slice(0, len);
+  return passPhrase;
 }
 
 function main() {
-  passRange.addEventListener("change", ({ target }) => {
+  passRange.addEventListener("input", ({ target }) => {
     const generators = constructGenerators();
-    root.innerText = genertePassword(target.value, generators);
+    password.innerText = genertePassword(target.value, generators);
   });
 
   generateBtn.addEventListener("click", () => {
     const generators = constructGenerators();
-    root.innerText = genertePassword(passRange.value, generators);
+    password.innerText = genertePassword(passRange.value, generators);
   });
+
+  //   default password
+  const generators = constructGenerators();
+  password.innerText = genertePassword(passRange.value, generators);
 }
 
 // call main function

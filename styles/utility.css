@@ -1,0 +1,21 @@
+.btn {
+  text-transform: uppercase;
+  padding: 1em 2em;
+  display: block;
+  width: 100%;
+  border-radius: 0.4em;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--clr-accent-900);
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-accent-500);
+}
