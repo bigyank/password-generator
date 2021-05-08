@@ -1,6 +1,7 @@
 const password = document.getElementById("password");
 const passwordContainer = document.getElementById("password-container");
 const generateBtn = document.getElementById("generateBtn");
+const copyBtn = document.getElementById("copy");
 
 const passRange = document.getElementById("passRange");
 
@@ -64,20 +65,33 @@ function genertePassword(len = 12, generators) {
   return passPhrase;
 }
 
-function main() {
-  passRange.addEventListener("input", ({ target }) => {
-    const generators = constructGenerators();
-    password.innerText = genertePassword(target.value, generators);
-  });
+function copyToClip(string) {
+  const element = document.createElement("textarea");
+  element.value = string;
+  document.body.appendChild(element);
+  element.select();
+  document.execCommand("copy");
+  document.body.removeChild(element);
+  alert("copied to clipboard");
+}
 
-  generateBtn.addEventListener("click", () => {
-    const generators = constructGenerators();
-    password.innerText = genertePassword(passRange.value, generators);
-  });
-
-  //   default password
+function appendPassword() {
   const generators = constructGenerators();
   password.innerText = genertePassword(passRange.value, generators);
+}
+
+function main() {
+  // on range change
+  passRange.addEventListener("input", appendPassword);
+
+  // on generate btn click
+  generateBtn.addEventListener("click", appendPassword);
+
+  // copy to clipboard
+  copyBtn.addEventListener("click", () => copyToClip(password.innerText));
+
+  //   default password
+  appendPassword();
 }
 
 // call main function

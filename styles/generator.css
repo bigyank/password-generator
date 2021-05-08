@@ -12,7 +12,8 @@ main {
 .generator-container,
 .btn-container,
 .options-container,
-.password-container {
+.password-container,
+.copy-container {
   margin-top: 2em;
 }
 

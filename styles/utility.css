@@ -21,6 +21,10 @@
   background-color: var(--clr-accent-500);
 }
 
+.btn-primary:active {
+  background-color: var(--clr-accent-900);
+}
+
 /* checkbox */
 .checkbox {
   height: 25px;
