@@ -1,3 +1,4 @@
+/* buttons */
 .btn {
   text-transform: uppercase;
   padding: 1em 2em;
@@ -18,4 +19,25 @@
 
 .btn-primary:hover {
   background-color: var(--clr-accent-500);
+}
+
+/* checkbox */
+.checkbox {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #34495e;
+  background-color: #34495e;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  border: 2px solid #34495e;
+  background-color: var(--clr-accent-900);
 }
